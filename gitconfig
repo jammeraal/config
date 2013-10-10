@@ -12,5 +12,5 @@
     mt = mergetool --tool=vimdiff --no-prompt
 [color]
     ui = true
-[lpush]
+[push]
 	default = matching
