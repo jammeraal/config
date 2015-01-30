@@ -3,3 +3,35 @@ caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{=wk}%
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
+#standard scrolling
+termcapinfo xterm* ti@:te@
+
+# huge scrollback buffer
+defscrollback 5000
+
+select 0
+bind c screen 1 # window numbering starts at 1 not 0
+bind 0 select 10
+
+#default windows
+screen -t sql 1
+select 1
+stuff "cd ~/git/ostrato/install/sql^M"
+
+screen -t sudo_ 2
+select 2
+stuff "cd ~/git/ostrato^M"
+
+screen -t log_ 3
+select 3
+stuff "cd /var/log/ostrato^M"
+
+
+screen -t other 4
+select 4
+stuff "cd ~/git/ostrato^M"
+
+select 1
+
+#set default directory for new windows
+stuff "screen -X eval 'chdir /home/joe/git/ostrato'^M"
