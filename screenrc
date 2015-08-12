@@ -16,22 +16,22 @@ bind 0 select 10
 #default windows
 screen -t sql 1
 select 1
-stuff "cd ~/git/ostrato/install/sql^M"
+stuff "cd ~/git/cloudsm_python/install/sql^M"
 
 screen -t sudo_ 2
 select 2
-stuff "cd ~/git/ostrato^M"
+stuff "cd ~/git/cloudsm_python^M"
 
 screen -t log_ 3
 select 3
-stuff "cd /var/log/ostrato^M"
+stuff "cd /var/log/cloudsm_python^M"
 
 
 screen -t other 4
 select 4
-stuff "cd ~/git/ostrato^M"
+stuff "cd ~/git/cloudsm_python^M"
 
 select 1
 
 #set default directory for new windows
-stuff "screen -X eval 'chdir /home/joe/git/ostrato'^M"
+stuff "screen -X eval 'chdir /home/joe/git/cloudsm_python'^M"
